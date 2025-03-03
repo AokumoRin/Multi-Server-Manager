@@ -1,0 +1,66 @@
+/* public/style/font.css */
+
+/* NanumGothic ExtraBold */
+@font-face {
+    font-family: "NanumGothic";
+    src: url("../font/NanumGothicExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+.font-exbold {
+    font-family: "NanumGothic";
+    font-weight: 800;
+}
+
+/* NanumGothic Bold */
+@font-face {
+    font-family: "NanumGothic";
+    src: url("../font/NanumGothicBold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font-bold {
+    font-family: "NanumGothic";
+    font-weight: 700;
+}
+
+/* NanumGothic */
+@font-face {
+    font-family: "NanumGothic";
+    src: url("../font/NanumGothic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font {
+    font-family: "NanumGothic";
+    font-weight: 400;
+}
+
+/* NanumGothic Light */
+@font-face {
+    font-family: "NanumGothic";
+    src: url("../font/NanumGothicLight.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+.font-light {
+    font-family: "NanumGothic";
+    font-weight: 300;
+}
+
+/* 폰트 사이즈 */
+.font-12 {
+    font-size: 12px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.font-24 {
+    font-size: 24px;
+}

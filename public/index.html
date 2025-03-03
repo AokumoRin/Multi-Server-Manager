@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Server Manager</title>
+
+    <!-- 스타일 / CSS -->
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/all.min.css" />
+    <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="style/font.css" />
+
+    <!-- 스크립트 / JS -->
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/jquery.min.js"></script>
+    <script src="script/index.js"></script>
+</head>
+<body>
+    <!-- 메인 컨테이너 -->
+    <div class="container-fluid main-container">
+        <!-- 서버 목록 토글 버튼 -->
+        <button class="btn server-list-toggle-button">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- 설정 버튼 -->
+        <button class="btn change-container main-setting-button" data-container="main-setting">
+            <i class="fa-solid fa-gear main-setting-gear"></i>
+        </button>
+
+        <!-- 정보 버튼 -->
+        <button class="btn change-container main-info-button" data-container="main-info">
+            <i class="fa-solid fa-circle-info"></i>
+        </button>
+
+        <!-- 서버 목록 박스 -->
+        <div class="server-list-box" data-open="true">
+            <!-- 서버 목록 박스 타이틀 박스 -->
+            <div class="server-list-title-box">
+                <p class="font-exbold server-list-title">서버 목록</p>
+            </div>
+
+            <!-- 서버 목록 -->
+            <div class="d-flex justify-content-center server-list">
+                
+            </div>
+
+            <!-- 서버 목록 관리 버튼 박스 -->
+            <div class="d-flex justify-content-between server-list-manager-button-box">
+                <!-- 서버 목록 개수 박스 -->
+                <div class="d-flex justify-content-start ms-3 server-list-count-box">
+                    <!-- 서버 목록 개수 -->
+                    <p class="font-bold font-12 server-list-count">서버 파일 수: <span class="server-list-count-text"></span>개</p>
+                </div>
+
+                <!-- 서버 목록 관리 버튼 -->
+                <div class="d-flex justify-content-end me-3">
+                    <!-- 서버 목록 새로고침 버튼 -->
+                    <div class="server-list-manager-button server-list-refresh-button">
+                        <i class="fa-solid fa-arrow-rotate-right fa-2xs"></i>
+                    </div>
+                    <!-- 서버 추가 버튼 -->
+                    <div class="server-list-manager-button server-list-add-button">
+                        <i class="fa-solid fa-plus fa-2xs"></i>
+                    </div>
+
+                    <!-- 서버 수정 버튼 -->
+                    <div class="server-list-manager-button server-list-edit-button">
+                        <i class="fa-solid fa-pen fa-2xs"></i>
+                    </div>
+
+                    <!-- 서버 삭제 버튼 -->
+                    <div class="server-list-manager-button server-list-del-button">
+                        <i class="fa-solid fa-minus fa-2xs"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 설정 컨테이너 -->
+    <div class="container-fluid setting-container">
+        <!-- 뒤로가기 버튼 -->
+        <button class="btn change-container setting-main-button" data-container="setting-main">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <!-- 설정 타이틀 박스 -->
+        <div class="row d-flex justify-content-center mt-3 setting-title-box">
+            <!-- 설정 타이틀 -->
+            <div class="col-12 setting-title">
+                <!-- 설정 타이틀 텍스트 -->
+                <p class="font-exbold font-24 text-center setting-title-text">설정</p>
+            </div>
+        </div>
+        <!-- 설정 메인 박스 -->
+        <div class="row d-flex justify-content-center mt-3 setting-main-box">
+            <!-- 설정 언어 박스 -->
+            <div class="col-4 text-center setting-language-box">
+                <p class="font-bold">언어</p>
+                <div class="row d-flex justify-content-center mt-1">
+                    <div class="col-10">
+                        <select class="form-select font">
+                            <option selected>기본 (자동 설정)</option>
+                            <option>한국어</option>
+                            <option>English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- 설정 테마 박스 -->
+            <div class="col-4 text-center setting-language-box">
+                <p class="font-bold">테마</p>
+                <div class="row d-flex justify-content-center mt-1">
+                    <div class="col-10">
+                        <select class="form-select font setting-theme-select">
+                            <option value="auto"  selected>기본 (자동 설정)</option>
+                            <option value="light">밝은 테마</option>
+                            <option value="dark">어두운 테마</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 정보 컨테이너 -->
+    <div class="container-fluid info-container">
+        <!-- 뒤로가기 버튼 -->
+        <button class="btn change-container info-main-button" data-container="info-main">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <!-- 정보 타이틀 박스 -->
+        <div class="row d-flex justify-content-center mt-3 info-title-box">
+            <!-- 정보 타이틀 -->
+            <div class="col-12 info-title">
+                <!-- 정보 타이틀 텍스트 -->
+                <p class="font-exbold font-24 text-center info-title-text">정보</p>
+            </div>
+        </div>
+
+        <!-- 정보 메인 박스 -->
+        <div class="row d-flex justify-content-center mt-3 info-main-box">
+            <!-- 정보 왼쪽 박스 -->
+            <div class="col-6 text-center info-left-box">
+                <!-- 프로그램 정보 박스 -->
+                <div class="row d-flex justify-content-end info-program-box">
+                    <!-- 프로그램 정보 -->
+                    <div class="col-6 text-center info-program">
+                        <!-- 프로그램 정보 텍스트 -->
+                        <p class="font-bold info-program-text mb-1">프로그램 정보</p>
+
+                        <!-- 프로그램 정보 표시 박스 -->
+                        <div class="row d-flex justify-content-center info-program-view-box">
+                            <!-- 프로그램 정보 키 박스 -->
+                            <div class="col-4 text-end info-program-key-box">
+                                <!-- 프로그램 정보 이름 키 -->
+                                <p class="font font-12">이름 :</p>
+
+                                <!-- 프로그램 정보 버전 키 -->
+                                <p class="font font-12">버전 :</p>
+
+                                <!-- 프로그램 정보 배포 날짜 키 -->
+                                <p class="font font-12">배포 날짜 :</p>
+                            </div>
+
+                            <!-- 프로그램 정보 값 박스 -->
+                            <div class="col-8 text-start info-program-value-box">
+                                <!-- 프로그램 정보 이름 값 -->
+                                <p class="font font-12">Multi Server Manager</p>
+
+                                <!-- 프로그램 정보 버전 값 -->
+                                <p class="font font-12">1.0.0</p>
+
+                                <!-- 프로그램 정보 배포 날짜 값 -->
+                                <p class="font font-12">2025-03-01</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 정보 오른쪽 박스 -->
+            <div class="col-6 text-center info-right-box">
+                <!-- 제작자 정보 박스 -->
+                <div class="row d-flex justify-content-start info-auhor-box">
+                    <!-- 제작자 정보 -->
+                    <div class="col-6 text-center info-auhor">
+                        <!-- 제작자 정보 텍스트 -->
+                        <p class="font-bold info-auhor-text mb-1">제작자 정보</p>
+                
+                        <!-- 제작자 정보 표시 박스 -->
+                        <div class="row d-flex justify-content-center info-auhor-view-box">
+                            <!-- 제작자 정보 키 박스 -->
+                            <div class="col-4 text-end info-auhor-key-box">
+                                <!-- 제작자 정보 이름 키 -->
+                                <p class="font font-12">제작자 :</p>
+                
+                                <!-- 제작자 정보 Github 키 -->
+                                <p class="font font-12">Github :</p>
+                
+                                <!-- 제작자 정보 이메일 키 -->
+                                <p class="font font-12">이메일 :</p>
+                            </div>
+                
+                            <!-- 제작자 정보 값 박스 -->
+                            <div class="col-8 text-start info-auhor-value-box">
+                                <!-- 제작자 정보 이름 값 -->
+                                <p class="font font-12">Multi Server Manager</p>
+                
+                                <!-- 제작자 정보 Github 값 -->
+                                <p class="font font-12">
+                                    <a href="#" onclick="window.multiServerManager.openGithub()">
+                                        <img class="info-author-github-svg" src="image/github.svg" width="12" height="12" />
+                                        SadAriel
+                                    </a>
+                                </p>
+                
+                                <!-- 제작자 정보 이메일 값 -->
+                                <p class="font font-12">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="mailto:sadariel3@gmail.com">
+                                        sadariel3@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 정보 업데이트 로그 박스 -->
+        <div class="row d-flex justify-content-center mt-3 info-changelog-box">
+            <div class="col-12 d-flex justify-content-center">
+                <p class="font-bold mb-1">업데이트 로그</p>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <div class="info-changelog-log">
+                    <p class="font-bold">- 1.0.0</p>
+                    <p class="font font-12 tab">개발 중...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

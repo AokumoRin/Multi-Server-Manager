@@ -1,0 +1,248 @@
+/* public/style/index.css */
+
+/* 전체 */
+* {
+    user-select: none;
+}
+
+/* p 태그 */
+p {
+    margin-bottom: 0;
+}
+
+/* 애니메이션 */
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 컨테이너 */
+.setting-container, .info-container {
+    display: none;
+}
+
+/* 
+    메인 컨테이너
+*/
+
+/* 서버 목록 토글 버튼 */
+.server-list-toggle-button {
+    position: absolute;
+
+    top: .3em;
+    left: .3em;
+
+    padding: .25em .75em;
+    border: 0;
+    
+    z-index: 2;
+}
+
+/* 메인 설정 버튼 */
+.main-setting-button {
+    position: absolute;
+
+    top: .3em;
+    left: 2.3em;
+
+    padding: .25em .75em;
+    border: 0;
+
+    z-index: 2;
+}
+
+/* 메인 정보 버튼 */
+.main-info-button {
+    position: absolute;
+
+    top: .3em;
+    left: 4.3em;
+
+    padding: .25em .75em;
+    border: 0;
+
+    z-index: 2;
+}
+
+/* 설정 기어 */
+.main-setting-button:hover > .main-setting-gear {
+    animation: rotateAnimation 1s linear infinite;
+}
+
+/* 서버 목록 박스 */
+.server-list-box {
+    position: absolute;
+
+    top: 0;
+    left: 0vw;
+
+    width: 30vw;
+    height: 100vh;
+
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+
+    background-color: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(5px);
+
+    transition: left .5s ease;
+    text-align: center;
+
+    overflow-y: hidden;
+}
+
+/* 서버 목록 박스 타이틀 박스 */
+.server-list-title-box {
+    height: 6vh;
+
+    align-content: center;
+}
+
+/* 서버 목록 */
+.server-list {
+    position: relative;
+
+    height: 90vh;
+    min-height: 0;
+
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.server-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.server-list::-webkit-scrollbar-thumb {
+    background-color: #C0C0C0;
+    background-clip: padding-box;
+
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+/* 서버 */
+.server-box, .server-none {
+    width: 95%;
+    position: absolute;
+}
+
+.server-button, .server-none-button {
+    border-radius: 1em;
+    text-align: start;
+}
+
+.server-image {
+    width: 64px;
+    height: 64px;
+
+    border-radius: 100%;
+}
+
+.server-star {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    padding: .15em .5em;
+    border: 0;
+}
+
+/* 서버 목록 개수 박스 */
+.server-list-count-box {
+    align-items: center;
+}
+
+/* 서버 목록 관리 버튼 박스 */
+.server-list-manager-button-box {
+    height: 4vh;
+}
+
+/* 서버 목록 관리 버튼 */
+.server-list-manager-button {
+    width: 4vh;
+    height: 4vh;
+
+    align-content: center;
+}
+
+.server-list-manager-button:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/* 
+    설정 컨테이너
+*/
+
+/* 뒤로가기 버튼 */
+.setting-main-button {
+    position: absolute;
+    
+    top: .3em;
+    right: .3em;
+
+    padding: .25em .75em;
+    border: 0;
+
+    z-index: 2;
+}
+
+
+/* 
+    정보 컨테이너
+*/
+
+/* 뒤로가기 버튼 */
+.info-main-button {
+    position: absolute;
+
+    top: .3em;
+    right: .3em;
+
+    padding: .25em .75em;
+    border: 0;
+
+    z-index: 2;
+}
+
+/* Github Svg */
+[data-bs-theme=dark] .info-author-github-svg {
+    filter: invert(100%);
+}
+
+/* 정보 업데이트 로그 */
+.info-changelog-log {
+    width: 70vw;
+    height: 40vh;
+    min-height: 0;
+
+    padding: 1em 2em;
+
+    border-radius: 1em;
+
+    background-color: rgba(0, 0, 0, .3);
+    overflow-y: scroll;
+}
+
+.info-changelog-log::-webkit-scrollbar {
+    width: 10px;
+}
+
+.info-changelog-log::-webkit-scrollbar-thumb {
+    background-color: #C0C0C0;
+    background-clip: padding-box;
+
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.info-changelog-log .tab {
+    margin-left: 1.5em;
+}
