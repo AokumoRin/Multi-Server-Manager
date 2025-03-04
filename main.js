@@ -1,7 +1,7 @@
 // main.js
 
 // 모듈 선언
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, nativeTheme } = require("electron");
 const path = require("path");
 const fs = require("fs");
 const ini = require("ini");
@@ -59,6 +59,18 @@ const createWindow = () => {
     if (!fs.existsSync(serverFolderPath))
         // 서버 폴더 생성
         fs.mkdirSync(serverFolderPath);
+
+    // 시스템 테마 변경 시
+    nativeTheme.on("updated", () => {
+        // 현재 저장된 테마 확인
+        const theme = ini.parse(fs.readFileSync(savesFilePath, "utf-8"))["Program"]["Theme"];
+        
+        // 현재 저장된 테마가 자동 일 경우
+        if(theme === "auto"){
+            // 테마 변경 요청
+            mainWindow.webContents.send("updateTheme");
+        }
+    });
 
     mainWindow.webContents.openDevTools();
 };
