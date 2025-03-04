@@ -5,5 +5,7 @@ const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("multiServerManager", {
     getServerList: async () => await ipcRenderer.invoke("getServerList"),
+    getSetting: async () => await ipcRenderer.invoke("getSetting"),
+    getSystemTheme: async () => await ipcRenderer.invoke("getSystemTheme"),
     openGithub: async () => await ipcRenderer.invoke("openGithub")
 });

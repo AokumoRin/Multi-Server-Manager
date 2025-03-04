@@ -15,6 +15,7 @@
     <script src="script/bootstrap.min.js"></script>
     <script src="script/jquery.min.js"></script>
     <script src="script/index.js"></script>
+    <script src="script/setting.js"></script>
 </head>
 <body>
     <!-- 메인 컨테이너 -->
@@ -101,10 +102,10 @@
                 <p class="font-bold">언어</p>
                 <div class="row d-flex justify-content-center mt-1">
                     <div class="col-10">
-                        <select class="form-select font">
-                            <option selected>기본 (자동 설정)</option>
-                            <option>한국어</option>
-                            <option>English</option>
+                        <select class="form-select font setting-language-select">
+                            <option value="auto" selected>기본 (자동 설정)</option>
+                            <option value="ko-KR">한국어</option>
+                            <option value="en-US">English</option>
                         </select>
                     </div>
                 </div>

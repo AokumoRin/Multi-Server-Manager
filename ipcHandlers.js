@@ -1,12 +1,13 @@
 // ipcHandlers.js
 
 // 모듈 선언
-const { app, ipcMain, dialog, shell } = require("electron");
+const { app, ipcMain, dialog, shell, nativeTheme } = require("electron");
 const path = require("path");
 const fs = require("fs");
+const ini = require("ini");
 
 // 상수 선언
-const programFolderPath = path.join(app.getPath("exe"), "..");
+const userDataFolderPath = path.join(app.getPath("userData"));
 
 // getServerList - 서버 목록 불러오기
 ipcMain.handle("getServerList", async (_event) => {
@@ -14,7 +15,7 @@ ipcMain.handle("getServerList", async (_event) => {
     const result = [];
 
     // 서버 폴더 경로
-    const serverFolderPath = path.join(programFolderPath, "server");
+    const serverFolderPath = path.join(userDataFolderPath, "server");
 
     // 서버 폴더 목록
     const serverFolderList = fs.readdirSync(serverFolderPath).filter(element => {
@@ -50,6 +51,37 @@ ipcMain.handle("getServerList", async (_event) => {
 
     // 결과 반환
     return result;
+});
+
+// getSetting - 설정 불러오기
+ipcMain.handle("getSetting", async (_evnet) => {
+    // 설정 파일 경로
+    const settingPath = path.join(userDataFolderPath, "saves.ini");
+
+    // 설정 파일 불러오기
+    const settingFile = fs.readFileSync(settingPath, "utf-8");
+
+    // 설정 파일 읽기
+    let setting;
+
+    try {
+        setting = ini.parse((settingFile));
+    }
+    catch (err) {
+        return {};
+    }
+
+    // 설정 반환
+    return setting;
+});
+
+// getSystemTheme - 현재 시스템 테마 불러오기
+ipcMain.handle("getSystemTheme", async (_evnet) => {
+    // 현재 시스템 테마
+    const systemTheme = nativeTheme.shouldUseDarkColors ? "dark" : "light";
+
+    // 현재 시스템 테마 반환
+    return systemTheme;
 });
 
 // openGithub - Github 열기

@@ -10,7 +10,7 @@ const ini = require("ini");
 require("./ipcHandlers");
 
 // 상수 선언
-const programFolderPath = path.join(app.getPath("exe"), "..");
+const userDataFolderPath = path.join(app.getPath("userData"));
 
 // 변수 선언
 let mainWindow;
@@ -36,15 +36,15 @@ const createWindow = () => {
     });
 
     // 저장 파일 경로
-    const savesFilePath = path.join(programFolderPath, "saves.ini");
+    const savesFilePath = path.join(userDataFolderPath, "saves.ini");
 
     // 저장 파일이 없다면
     if (!fs.existsSync(savesFilePath)) {
         // 저장 파일 기본 형식
         const defaultSaves = {
             Program: {
-                Language: "Auto",
-                Theme: "Auto"
+                Language: "auto",
+                Theme: "auto"
             }
         };
 
@@ -53,7 +53,7 @@ const createWindow = () => {
     }
 
     // 서버 폴더 경로
-    const serverFolderPath = path.join(programFolderPath, "server");
+    const serverFolderPath = path.join(userDataFolderPath, "server");
 
     // 서버 폴더가 없다면
     if (!fs.existsSync(serverFolderPath))
