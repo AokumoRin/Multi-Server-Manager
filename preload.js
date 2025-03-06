@@ -8,5 +8,6 @@ contextBridge.exposeInMainWorld("multiServerManager", {
     getSetting: async () => await ipcRenderer.invoke("getSetting"),
     getSystemTheme: async () => await ipcRenderer.invoke("getSystemTheme"),
     updateTheme: (callback) => ipcRenderer.on("updateTheme", callback),
+    setSetting: async (object) => ipcRenderer.invoke("setSetting", object),
     openGithub: async () => await ipcRenderer.invoke("openGithub")
 });

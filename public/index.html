@@ -6,14 +6,14 @@
     <title>Multi Server Manager</title>
 
     <!-- 스타일 / CSS -->
-    <link rel="stylesheet" href="style/bootstrap.min.css" />
-    <link rel="stylesheet" href="style/all.min.css" />
+    <link rel="stylesheet" href="style/library/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/library/all.min.css" />
     <link rel="stylesheet" href="style/index.css" />
     <link rel="stylesheet" href="style/font.css" />
 
     <!-- 스크립트 / JS -->
-    <script src="script/bootstrap.min.js"></script>
-    <script src="script/jquery.min.js"></script>
+    <script src="script/library/jquery.min.js"></script>
+    <script src="script/library/bootstrap.min.js"></script>
     <script src="script/index.js"></script>
     <script src="script/setting.js"></script>
 </head>
@@ -39,7 +39,7 @@
         <div class="server-list-box" data-open="true">
             <!-- 서버 목록 박스 타이틀 박스 -->
             <div class="server-list-title-box">
-                <p class="font-exbold server-list-title">서버 목록</p>
+                <p class="font-exbold server-list-title language" data-language="main.serverlist.title">main.serverlist.title</p>
             </div>
 
             <!-- 서버 목록 -->
@@ -52,7 +52,9 @@
                 <!-- 서버 목록 개수 박스 -->
                 <div class="d-flex justify-content-start ms-3 server-list-count-box">
                     <!-- 서버 목록 개수 -->
-                    <p class="font-bold font-12 server-list-count">서버 파일 수: <span class="server-list-count-text"></span>개</p>
+                    <p class="font-bold font-12 server-list-count">
+                        <span class="language" data-language="main.serverlist.count">main.serverlist.count</span>: <span class="server-list-count-text"></span><span class="language" data-language="main.serverlist.countend">main.serverlist.countend</span>
+                    </p>
                 </div>
 
                 <!-- 서버 목록 관리 버튼 -->
@@ -92,33 +94,31 @@
             <!-- 설정 타이틀 -->
             <div class="col-12 setting-title">
                 <!-- 설정 타이틀 텍스트 -->
-                <p class="font-exbold font-24 text-center setting-title-text">설정</p>
+                <p class="font-exbold font-24 text-center setting-title-text language" data-language="setting.title">setting.title</p>
             </div>
         </div>
         <!-- 설정 메인 박스 -->
         <div class="row d-flex justify-content-center mt-3 setting-main-box">
             <!-- 설정 언어 박스 -->
             <div class="col-4 text-center setting-language-box">
-                <p class="font-bold">언어</p>
+                <p class="font-bold language" data-language="setting.language.title">setting.language.title</p>
                 <div class="row d-flex justify-content-center mt-1">
                     <div class="col-10">
                         <select class="form-select font setting-language-select">
-                            <option value="auto" selected>기본 (자동 설정)</option>
-                            <option value="ko-KR">한국어</option>
-                            <option value="en-US">English</option>
+                            <option value="auto language" data-language="setting.language.auto" selected>setting.language.auto</option>
                         </select>
                     </div>
                 </div>
             </div>
             <!-- 설정 테마 박스 -->
             <div class="col-4 text-center setting-language-box">
-                <p class="font-bold">테마</p>
+                <p class="font-bold language" data-language="setting.theme.title">setting.theme.title</p>
                 <div class="row d-flex justify-content-center mt-1">
                     <div class="col-10">
                         <select class="form-select font setting-theme-select">
-                            <option value="auto"  selected>기본 (자동 설정)</option>
-                            <option value="light">밝은 테마</option>
-                            <option value="dark">어두운 테마</option>
+                            <option value="auto" class="language" data-language="setting.theme.auto" selected>setting.theme.auto</option>
+                            <option value="light" class="language" data-language="setting.theme.light">setting.theme.light</option>
+                            <option value="dark" class="language" data-language="setting.theme.dark">setting.theme.dark</option>
                         </select>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
             <!-- 정보 타이틀 -->
             <div class="col-12 info-title">
                 <!-- 정보 타이틀 텍스트 -->
-                <p class="font-exbold font-24 text-center info-title-text">정보</p>
+                <p class="font-exbold font-24 text-center info-title-text language" data-language="info.title">info.title</p>
             </div>
         </div>
 
@@ -151,20 +151,20 @@
                     <!-- 프로그램 정보 -->
                     <div class="col-6 text-center info-program">
                         <!-- 프로그램 정보 텍스트 -->
-                        <p class="font-bold info-program-text mb-1">프로그램 정보</p>
+                        <p class="font-bold info-program-text mb-1 language" data-language="info.programinfo.title">info.programinfo.title</p>
 
                         <!-- 프로그램 정보 표시 박스 -->
                         <div class="row d-flex justify-content-center info-program-view-box">
                             <!-- 프로그램 정보 키 박스 -->
                             <div class="col-4 text-end info-program-key-box">
                                 <!-- 프로그램 정보 이름 키 -->
-                                <p class="font font-12">이름 :</p>
+                                <p class="font font-12 language"><span class="language" data-language="info.programinfo.name">info.programinfo.name</span> :</p>
 
                                 <!-- 프로그램 정보 버전 키 -->
-                                <p class="font font-12">버전 :</p>
+                                <p class="font font-12"><span class="language" data-language="info.programinfo.version">info.programinfo.version</span> :</p>
 
                                 <!-- 프로그램 정보 배포 날짜 키 -->
-                                <p class="font font-12">배포 날짜 :</p>
+                                <p class="font font-12"><span class="language" data-language="info.programinfo.distributedate">info.programinfo.distributedate</span> :</p>
                             </div>
 
                             <!-- 프로그램 정보 값 박스 -->
@@ -190,20 +190,20 @@
                     <!-- 제작자 정보 -->
                     <div class="col-6 text-center info-auhor">
                         <!-- 제작자 정보 텍스트 -->
-                        <p class="font-bold info-auhor-text mb-1">제작자 정보</p>
+                        <p class="font-bold info-auhor-text mb-1 language" data-language="info.authorinfo.title">info.authorinfo.title</p>
                 
                         <!-- 제작자 정보 표시 박스 -->
                         <div class="row d-flex justify-content-center info-auhor-view-box">
                             <!-- 제작자 정보 키 박스 -->
                             <div class="col-4 text-end info-auhor-key-box">
                                 <!-- 제작자 정보 이름 키 -->
-                                <p class="font font-12">제작자 :</p>
+                                <p class="font font-12"><span class="language" data-language="info.authorinfo.name">info.authorinfo.name</span> :</p>
                 
                                 <!-- 제작자 정보 Github 키 -->
                                 <p class="font font-12">Github :</p>
                 
                                 <!-- 제작자 정보 이메일 키 -->
-                                <p class="font font-12">이메일 :</p>
+                                <p class="font font-12"><span class="language" data-language="info.authorinfo.email">info.authorinfo.email</span> :</p>
                             </div>
                 
                             <!-- 제작자 정보 값 박스 -->
@@ -236,7 +236,7 @@
         <!-- 정보 업데이트 로그 박스 -->
         <div class="row d-flex justify-content-center mt-3 info-changelog-box">
             <div class="col-12 d-flex justify-content-center">
-                <p class="font-bold mb-1">업데이트 로그</p>
+                <p class="font-bold mb-1 language" data-language="info.changelog.title">info.changelog.title</p>
             </div>
             <div class="col-12 d-flex justify-content-center">
                 <div class="info-changelog-log">

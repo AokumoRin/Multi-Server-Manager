@@ -35,13 +35,13 @@ const createWindow = () => {
         mainWindow = null;
     });
 
-    // 저장 파일 경로
-    const savesFilePath = path.join(userDataFolderPath, "saves.ini");
+    // 설정 파일 경로
+    const settingFilePath = path.join(userDataFolderPath, "setting.ini");
 
-    // 저장 파일이 없다면
-    if (!fs.existsSync(savesFilePath)) {
-        // 저장 파일 기본 형식
-        const defaultSaves = {
+    // 설정 파일이 없다면
+    if (!fs.existsSync(settingFilePath)) {
+        // 설정 파일 기본 형식
+        const defaultSetting = {
             Program: {
                 Language: "auto",
                 Theme: "auto"
@@ -49,7 +49,7 @@ const createWindow = () => {
         };
 
         // 저장 파일 생성
-        fs.writeFileSync(savesFilePath, ini.stringify(defaultSaves));
+        fs.writeFileSync(settingFilePath, ini.stringify(defaultSetting));
     }
 
     // 서버 폴더 경로
@@ -60,10 +60,19 @@ const createWindow = () => {
         // 서버 폴더 생성
         fs.mkdirSync(serverFolderPath);
 
+    // 언어 폴더 경로
+    const languageFolderPath = path.join(userDataFolderPath, "language");
+
+    // 서버 폴더가 없다면
+    if (!fs.existsSync(languageFolderPath))
+        // 서버 폴더 생성
+        fs.mkdirSync(languageFolderPath);
+
+
     // 시스템 테마 변경 시
     nativeTheme.on("updated", () => {
         // 현재 저장된 테마 확인
-        const theme = ini.parse(fs.readFileSync(savesFilePath, "utf-8"))["Program"]["Theme"];
+        const theme = ini.parse(fs.readFileSync(settingFilePath, "utf-8"))["Program"]["Theme"];
         
         // 현재 저장된 테마가 자동 일 경우
         if(theme === "auto"){

@@ -1,0 +1,39 @@
+{
+    "main": {
+        "serverlist": {
+            "title": "서버 목록",
+            "count": "서버 파일 수",
+            "countend": "개"
+        }
+    },
+    "setting": {
+        "title": "설정",
+        "language": {
+            "title": "언어",
+            "auto": "기본 (자동 설정)"
+        },
+        "theme": {
+            "title": "테마",
+            "auto": "기본 (자동 설정)",
+            "light": "밝은 테마",
+            "dark": "어두운 테마"
+        }
+    },
+    "info": {
+        "title": "정보",
+        "programinfo": {
+            "title": "프로그램 정보",
+            "name": "이름",
+            "version": "버전",
+            "distributedate": "배포 날짜"
+        },
+        "authorinfo": {
+            "title": "제작자 정보",
+            "name": "제작자",
+            "email": "이메일"
+        },
+        "changelog": {
+            "title": "업데이트 로그"
+        }
+    }
+}
