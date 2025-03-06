@@ -1,9 +1,11 @@
 {
+    "name": "한국어",
     "main": {
         "serverlist": {
             "title": "서버 목록",
             "count": "서버 파일 수",
-            "countend": "개"
+            "countend": "개",
+            "undefined": "서버를 먼저 생성해주세요."
         }
     },
     "setting": {

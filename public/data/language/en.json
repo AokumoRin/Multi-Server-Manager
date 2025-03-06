@@ -1,0 +1,41 @@
+{
+    "name": "English",
+    "main": {
+        "serverlist": {
+            "title": "Server List",
+            "count": "Number of Server Files",
+            "countend": "Items",
+            "undefined": "Please create the server first."
+        }
+    },
+    "setting": {
+        "title": "Settings",
+        "language": {
+            "title": "Language",
+            "auto": "Default (Auto Set)"
+        },
+        "theme": {
+            "title": "Theme",
+            "auto": "Default (Auto Set)",
+            "light": "Light Theme",
+            "dark": "Dark Theme"
+        }
+    },
+    "info": {
+        "title": "Information",
+        "programinfo": {
+            "title": "Program Info",
+            "name": "Name",
+            "version": "Version",
+            "distributedate": "Release Date"
+        },
+        "authorinfo": {
+            "title": "Author Info",
+            "name": "Author",
+            "email": "Email"
+        },
+        "changelog": {
+            "title": "Changelog"
+        }
+    }
+}

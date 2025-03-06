@@ -70,13 +70,16 @@ const serverListManager = async () => {
     // 서버 목록이 없는 경우
     if(serverList.length === 0) {
         $(".server-list").append(`
-                <!-- 서버 -->
-                <div class="server-none">
-                    <button class="btn btn-outline-secondary d-flex w-100 server-none-button" disabled>
-                        서버를 먼저 생성해주세요.
-                    </button>
-                </div>
-            `);
+            <!-- 서버 -->
+            <div class="server-none">
+                <button class="btn btn-outline-secondary d-flex w-100 server-none-button language" data-language="main.serverlist.undefined" disabled>
+                    main.serverlist.undefined
+                </button>
+            </div>
+        `);
+
+        // 서버 파일 개수 수정
+        $(".server-list-count-text").html("0 ");
 
         return;
     }
