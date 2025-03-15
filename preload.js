@@ -10,6 +10,7 @@ contextBridge.exposeInMainWorld("multiServerManager", {
     getLanguageList: async () => ipcRenderer.invoke("getLanguageList"),
     getSystemLanguage: async () => ipcRenderer.invoke("getSystemLanguage"),
     getLanguageData: async (language) => ipcRenderer.invoke("getLanguageData", language),
+    openLanguageFolder: async () => ipcRenderer.invoke("openLanguageFolder"),
     getSystemTheme: async () => await ipcRenderer.invoke("getSystemTheme"),
     updateTheme: (callback) => ipcRenderer.on("updateTheme", callback),
     openGithub: async () => await ipcRenderer.invoke("openGithub")

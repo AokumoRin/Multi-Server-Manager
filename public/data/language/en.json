@@ -12,7 +12,8 @@
         "title": "Settings",
         "language": {
             "title": "Language",
-            "auto": "Default (Auto Set)"
+            "auto": "Default (Auto Set)",
+            "languagefolder": "Open Language Folder"
         },
         "theme": {
             "title": "Theme",

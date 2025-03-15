@@ -63,11 +63,24 @@ const createWindow = () => {
     // 언어 폴더 경로
     const languageFolderPath = path.join(userDataFolderPath, "language");
 
-    // 서버 폴더가 없다면
+    // 언어 폴더가 없다면
     if (!fs.existsSync(languageFolderPath))
-        // 서버 폴더 생성
+        // 언어 폴더 생성
         fs.mkdirSync(languageFolderPath);
 
+    // 기본 언어 파일 경로
+    const languageKoreanPath = path.join(languageFolderPath, "ko.json");
+    const languageEnglishPath = path.join(languageFolderPath, "en.json");
+
+    // 기본 한국어 파일이 없으면
+    if(!fs.existsSync(languageKoreanPath))
+        // 한국어 언어 파일 복사
+        fs.copyFileSync(path.join(__dirname, "public", "data", "language", "ko.json"), languageKoreanPath);
+    
+    // 기본 영어 파일이 없으면
+    if(!fs.existsSync(languageEnglishPath))
+        // 한국어 언어 파일 복사
+        fs.copyFileSync(path.join(__dirname, "public", "data", "language", "en.json"), languageEnglishPath);
 
     // 시스템 테마 변경 시
     nativeTheme.on("updated", () => {

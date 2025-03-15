@@ -14,6 +14,7 @@
     <!-- 스크립트 / JS -->
     <script src="script/library/jquery.min.js"></script>
     <script src="script/library/bootstrap.min.js"></script>
+    <script src="script/function.js"></script>
     <script src="script/index.js"></script>
     <script src="script/setting.js"></script>
 </head>
@@ -80,6 +81,14 @@
                 </div>
             </div>
         </div>
+
+        <!-- 서버 정보 박스 -->
+        <div class="row d-flex justify-content-center main-serverinfo-box">
+            <!-- 서버 이름 박스 -->
+            <div class="col-8 mt-1 main-serverinfo-servertitle-box">
+                <p class="font font-24 text-center main-serverinfo-servertitle">서버 이름 테스트</p>
+            </div>
+        </div>
     </div>
 
     <!-- 설정 컨테이너 -->
@@ -107,6 +116,9 @@
                         <select class="form-select font setting-language-select">
                             <option value="auto" class="language" data-language="setting.language.auto" selected>setting.language.auto</option>
                         </select>
+                        <button class="btn btn-outline-secondary w-100 mt-2 setting-language-folder">
+                            <i class="fa-regular fa-folder-open"></i> <span class="language" data-language="setting.language.languagefolder">setting.language.languagefolder</span>
+                        </button>
                     </div>
                 </div>
             </div>

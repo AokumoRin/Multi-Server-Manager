@@ -73,7 +73,7 @@ const serverListManager = async () => {
             <!-- 서버 -->
             <div class="server-none">
                 <button class="btn btn-outline-secondary d-flex w-100 server-none-button language" data-language="main.serverlist.undefined" disabled>
-                    main.serverlist.undefined
+                    ${getNestedValue(window.languageData, "main.serverlist.undefined")}
                 </button>
             </div>
         `);
@@ -136,7 +136,7 @@ const serverListManager = async () => {
     const serverListCount = serverList.length;
 
     // 서버 파일 개수 수정
-    $(".server-list-count-text").html(serverListCount);
+    $(".server-list-count-text").html(`${serverListCount} `);
 
     // 서버 박스 탐색
     $(".server-box").map((i, element) => {
@@ -149,22 +149,4 @@ const serverListManager = async () => {
             serverBox.css("top", `${i * 5.2}em`);
         }
     });
-};
-
-// changeContainer - 컨테이너 변경
-const changeContainer = ($element) => {
-    // 클릭한 요소의 데이터 불러오기
-    const changeData = $($element).attr("data-container").split("-");
-
-    // 현재 컨테이너
-    const beforeContainer = changeData[0];
-
-    // 이동할 컨테이너
-    const afterContainer = changeData[1];
-
-    // 현재 컨테이너 숨기기
-    $(`.${beforeContainer}-container`).css("display", "none");
-
-    // 이동할 컨테이너 보이기
-    $(`.${afterContainer}-container`).css("display", "block");
 };

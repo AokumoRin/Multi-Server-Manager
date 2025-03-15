@@ -12,7 +12,8 @@
         "title": "설정",
         "language": {
             "title": "언어",
-            "auto": "기본 (자동 설정)"
+            "auto": "기본 (자동 설정)",
+            "languagefolder": "언어 폴더 열기"
         },
         "theme": {
             "title": "테마",

@@ -142,6 +142,15 @@ ipcMain.handle("getLanguageData", async (_event, language) => {
     return languageData;
 });
 
+// openLanguageFolder - 언어 폴더 열기 요청
+ipcMain.handle("openLanguageFolder", async (_event) => {
+    // 언어 폴더 경로
+    const languageFolderPath = path.join(userDataFolderPath, "language");
+
+    // 언어 폴더 열기
+    shell.openPath(languageFolderPath);
+});
+
 // getSystemTheme - 현재 시스템 테마 불러오기
 ipcMain.handle("getSystemTheme", async (_evnet) => {
     // 현재 시스템 테마

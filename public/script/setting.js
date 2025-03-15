@@ -30,7 +30,13 @@ $(document).ready(async () => {
 
         // 테마 설정 불러오기
         await setTheme();
-    })
+    });
+
+    // 언어 폴더 열기 버튼 클릭 시
+    $(".setting-language-folder").click(async () => {
+        // 언어 폴더 열기 요청
+        await window.multiServerManager.openLanguageFolder();
+    });
 
     // 테마 변경 요청을 받을때
     window.multiServerManager.updateTheme(async () => {
@@ -92,6 +98,9 @@ const setLanguage = async () => {
     // 선택된 언어 파일 불러오기
     const languageData = await window.multiServerManager.getLanguageData(language);
 
+    // 언어 파일 전역 변수에 저장
+    window.languageData = languageData;
+
     // 언어 파일 적용하기
     $(".language").map((i, element) => {
         $(element).html(getNestedValue(languageData, $(element).attr("data-language")));
@@ -119,9 +128,3 @@ const setTheme = async () => {
     // 테마 적용
     $("html").attr("data-bs-theme", themeSetting);
 }
-
-// getNestedValue - JSON 탐색
-const getNestedValue = (obj, path) => {
-    return path.split('.').reduce((acc, key) => acc && acc[key], obj) || path;
-}
-
